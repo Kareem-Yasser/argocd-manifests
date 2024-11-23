@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dummy-app
+  labels:
+    app: dummy-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dummy-app
+  template:
+    metadata:
+      labels:
+        app: dummy-app
+    spec:
+      containers:
+      - name: dummy-app
+        image: gcr.io/premium-silicon-393600/dummy-app:v2
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
+
