@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: dummy-app
-        image: gcr.io/premium-silicon-393600/dummy-app:v2
+        image: gcr.io/premium-silicon-393600/my-app:c013fe8
         resources:
           requests:
             memory: "64Mi"
